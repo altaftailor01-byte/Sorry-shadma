@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Shadma ❤️</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+.container{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+text-align:center;
+max-width:520px;
+z-index:10;
+}
+
+h1{
+color:#ff4b6e;
+font-size:42px;
+margin-bottom:10px;
+}
+
+/* animated name */
+
+.name{
+font-size:34px;
+font-weight:bold;
+color:#ff4b6e;
+animation: glow 2s infinite alternate;
+margin-bottom:15px;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 5px #ff4b6e;}
+to{ text-shadow:0 0 25px #ff4b6e;}
+}
+
+p{
+font-size:18px;
+line-height:1.6;
+color:#444;
+}
+
+button{
+border:none;
+padding:12px 25px;
+margin:10px;
+font-size:18px;
+border-radius:30px;
+cursor:pointer;
+}
+
+.forgive{
+background:#ff4b6e;
+color:white;
+}
+
+.angry{
+background:#ccc;
+}
+
+#loveMsg{
+display:none;
+color:#2ecc71;
+font-weight:bold;
+font-size:20px;
+margin-top:15px;
+}
+
+/* floating hearts */
+
+.heart{
+position:absolute;
+color:#ff4b6e;
+animation: float 6s linear infinite;
+opacity:.6;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh) scale(0)}
+100%{transform:translateY(-10vh) scale(1)}
+}
+
+/* falling roses */
+
+.rose{
+position:absolute;
+font-size:22px;
+animation: fall 7s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh)}
+100%{transform:translateY(110vh)}
+}
+
+.qr{
+margin-top:25px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- hearts -->
+<script>
+for(let i=0;i<20;i++){
+let heart=document.createElement("div")
+heart.className="heart"
+heart.innerHTML="❤️"
+heart.style.left=Math.random()*100+"vw"
+heart.style.fontSize=(Math.random()*20+15)+"px"
+heart.style.animationDuration=(Math.random()*3+3)+"s"
+document.body.appendChild(heart)
+}
+
+for(let i=0;i<10;i++){
+let rose=document.createElement("div")
+rose.className="rose"
+rose.innerHTML="🌹"
+rose.style.left=Math.random()*100+"vw"
+rose.style.animationDuration=(Math.random()*5+4)+"s"
+document.body.appendChild(rose)
+}
+</script>
+
+<div class="container">
+
+<h1>I'm Sorry</h1>
+
+<div class="name">Shadma ❤️</div>
+
+<p>
+Dear Shadma,<br><br>
+
+I never wanted to hurt you.  
+Seeing you upset makes my heart heavy.  
+You are very special to me and I truly value you.<br><br>
+
+If I could undo my mistake, I would do it instantly.  
+All I want is your smile again.<br><br>
+
+Please forgive me. 💌
+</p>
+
+<button class="forgive" onclick="forgive()">Forgive Me ❤️</button>
+<button class="angry" onclick="moveBtn(this)">Still Angry 😅</button>
+
+<div id="loveMsg">
+Thank you Shadma ❤️  
+You mean the world to me.
+</div>
+
+<div class="qr">
+
+<p>Scan this QR to read my apology again 📱</p>
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=Dear%20Shadma%2C%20I%20am%20truly%20sorry.%20You%20mean%20a%20lot%20to%20me.%20Please%20forgive%20me%20❤️">
+
+</div>
+
+</div>
+
+<!-- romantic music -->
+
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7c1f59b7d2.mp3?filename=romantic-piano-110624.mp3">
+</audio>
+
+<script>
+
+function forgive(){
+document.getElementById("loveMsg").style.display="block"
+}
+
+function moveBtn(btn){
+btn.style.position="absolute"
+btn.style.left=Math.random()*80+"%"
+btn.style.top=Math.random()*80+"%"
+}
+
+</script>
+
+</body>
+</html>
